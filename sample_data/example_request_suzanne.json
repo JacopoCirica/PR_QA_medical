@@ -1,0 +1,69 @@
+{
+  "patient": {
+    "first_name": "Suzanne",
+    "last_name": "Harris",
+    "date_of_birth": "2003-07-02",
+    "gender": "Female",
+    "prescription": {
+      "medication": "Zepbound",
+      "dosage": "5 mg",
+      "frequency": "once weekly",
+      "duration": "ongoing"
+    },
+    "visit_notes": [
+      "**Patient Name:** Suzanne Harris  \n**Date of Birth:** 2003-07-02  \n**Age:** 22 years  \n**Gender:** Female  \n**Visit Date:** 2025-08-11  \n**Visit Number:** 1 of 3 (Follow-up, 4 months on Zepbound)  \n**Medication:** Zepbound 5 mg, administered once weekly, ongoing\n\n---\n\n**Vital Signs:**  \n- **Height:** 5'5\" (165 cm)  \n- **Weight:** 210 lbs (95.3 kg)  \n- **BMI:** 34.9 kg/m²  \n\n---\n\n**Chief Complaint:**  \nFollow-up to monitor progress on Zepbound for weight management, assess side effects, and discuss ongoing treatment.\n\n---\n\n**History of Present Illness:**  \nMs. Harris returns for her first follow-up since initiating Zepbound 5 mg weekly for chronic weight management. She began the medication 4 months ago due to persistent obesity and unsuccessful attempts at lifestyle-based weight reduction. She reports improved satiety but mild gastrointestinal symptoms (nausea, intermittent constipation) within the first month, now largely resolved. Suzanne denies hypoglycemic episodes, abdominal pain, or significant mood changes. She reports increased energy for activities of daily living.\n\n---\n\n**Relevant Medical History:**  \n- Obesity (documented since adolescence)\n- Mild hypertension, diagnosed 2023, controlled with lifestyle modification (last BP 124/75)\n- No history of diabetes mellitus  \n- No known dyslipidemia  \n- No personal or family history of gallbladder disease or pancreatitis",
+      "**Patient Name:** Suzanne Harris  \n**DOB:** 2003-07-02 (22 years old)  \n**Gender:** Female  \n**Visit Date:** 2025-06-10  \n**Visit Number:** 3 of 3 (Continuation)  \n**Medication:** Zepbound 5 mg, once weekly  \n**Duration on Medication:** 4 months  \n\n---\n\n**Assessment:**  \nSuzanne is a 22-year-old female with class I obesity and significant family risk factors, here for her third follow-up visit since starting Zepbound 5 mg weekly. She continues to meet criteria for pharmacological weight management: BMI remains >30 kg/m², and she has not achieved or maintained adequate weight reduction with structured diet and exercise alone over a period of two years. She has lost 12 lbs (5.2% of initial body weight) over the past 4 months on Zepbound, reflecting appropriate response. Borderline blood pressure readings have shown slight improvement with weight loss. No significant side effects reported; Suzanne occasionally notes mild nausea for a few hours following injections, but denies vomiting, abdominal pain, hypoglycemia, or any signs of allergic reaction. She is adherent to medication and follows up with weekly weight measurements at home.\n\nLifestyle modifications continue: Suzanne maintains a Mediterranean-style diet and exercises (walking/jogging ~120 minutes per week), reinforced at each visit."
+    ]
+  },
+  "question_set": {
+    "name": "Zepbound Prior Authorization Questions - Continuation Request",
+    "questions": [
+      {
+        "type": "text",
+        "key": "age",
+        "content": "What is the patient's age in years?"
+      },
+      {
+        "type": "text",
+        "key": "bmi",
+        "content": "What is the patient's body mass index (BMI) in kilograms per square meter (kg/m2)"
+      },
+      {
+        "type": "boolean",
+        "key": "continuation",
+        "content": "Is this a continuation of therapy?"
+      },
+      {
+        "type": "text",
+        "key": "cont_duration",
+        "content": "How long has the patient been on the requested medication?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_less_6m",
+        "content": "Has the patient been on Zepbound therapy for less than 6 months?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_wl_gt5percent",
+        "content": "Has the patient had a weight loss of more than or equal to 5% of baseline body weight?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_adherent_maint_dose",
+        "content": "Does the patient meet BOTH of the following: \na. Patient has been adherent to 1 month of treatment,\nb. Patient is currently on a maintenance dose of 5 mg–15 mg once weekly?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_positive_response",
+        "content": "Has the patient had a positive response to treatment or had improvement in symptoms?",
+        "visible_if": "{continuation} = true"
+      }
+    ]
+  }
+}
+

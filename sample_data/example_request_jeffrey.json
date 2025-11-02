@@ -1,0 +1,94 @@
+{
+  "patient": {
+    "first_name": "Jeffrey",
+    "last_name": "Donovan",
+    "date_of_birth": "1953-11-12",
+    "gender": "Male",
+    "prescription": {
+      "medication": "Zepbound",
+      "dosage": "7.5 mg",
+      "frequency": "once weekly",
+      "duration": "ongoing"
+    },
+    "visit_notes": [
+      "**Patient Name:** Jeffrey Donovan  \n**DOB:** 1953-11-12  \n**Age:** 71 years  \n**Gender:** Male  \n**Visit Date:** 2025-06-26  \n**Visit Number:** 2 of 4 (Follow-up)  \n**Medication:** Zepbound 7.5 mg, once weekly, ongoing (Duration: 6 months)\n\n---\n\n**Chief Complaint/Reason for Visit:**  \nFollow-up for ongoing weight management with Zepbound. Assess medication efficacy, adherence, and tolerability.\n\n---\n\n**Vital Signs:**  \n- Weight: 254 lbs (115.2 kg)  \n- Height: 5'10\" (178 cm)  \n- BMI: 36.4 kg/m²  \n- BP: 134/80 mmHg  \n- HR: 71 bpm  \n- RR: 16/min  \n- Temp: 98.1 °F\n\n---\n\n**History:**  \nMr. Donovan returns for his second weight management follow-up since starting Zepbound six months ago. He has a long-standing history of obesity (BMI consistently >35), hypertension (diagnosed 2012), and hyperlipidemia. Non-insulin-dependent type 2 diabetes is present, diagnosed in 2020, well managed with oral hypoglycemics (metformin 1000 mg BID). He previously attempted weight loss with dietary modifications and increased physical activity over the past 2 years, resulting in modest weight loss but with significant regains after cessation of structured programs. He has no history of pancreatitis, medullary thyroid carcinoma, or multiple endocrine neoplasia type 2.\n\n---\n\n**Assessment:**  \n71-year-old male with morbid obesity (BMI: 36.4), hypertension, type 2 diabetes, and hyperlipidemia, currently on Zepbound 7.5 mg weekly for the past 6 months for chronic weight management. \n  \nHe continues to meet the BMI criteria for chronic weight management pharmacotherapy (BMI >30, or >27 with comorbidities), with the presence of both hypertension and diabetes further supporting necessity. He has previously demonstrated commitment to lifestyle interventions (diet, exercise) with insufficient long-term effect and partial initial results. \n\nOver the past 6 months, he has achieved a weight loss of 18 lbs (from 272 lbs pre-treatment to 254 lbs today; 6.6% body weight reduction). He denies significant side effects—no nausea, vomiting, or signs of hypoglycemia. Bowel habits are regular. He reports adherence to weekly dosing, taking medication on Thursdays. Home blood pressure and blood sugars remain within target."
+    ]
+  },
+  "question_set": {
+    "name": "Zepbound Prior Authorization Questions - Continuation (>6 months)",
+    "questions": [
+      {
+        "type": "text",
+        "key": "age",
+        "content": "What is the patient's age in years?"
+      },
+      {
+        "type": "text",
+        "key": "weight",
+        "content": "What is the patient's weight (including unit)?"
+      },
+      {
+        "type": "text",
+        "key": "height",
+        "content": "What is the patient's height (including unit)?"
+      },
+      {
+        "type": "text",
+        "key": "bmi",
+        "content": "What is the patient's body mass index (BMI) in kilograms per square meter (kg/m2)"
+      },
+      {
+        "type": "text",
+        "key": "diagnosis",
+        "content": "What is the diagnosis for the medication being requested?"
+      },
+      {
+        "type": "boolean",
+        "key": "continuation",
+        "content": "Is this a continuation of therapy?"
+      },
+      {
+        "type": "text",
+        "key": "cont_duration",
+        "content": "How long has the patient been on the requested medication?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_less_6m",
+        "content": "Has the patient been on Zepbound therapy for less than 6 months?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_maintain_wl",
+        "content": "Has the patient been receiving Zepbound therapy for greater than 6 months and is continuing to experience or maintain weight loss?",
+        "visible_if": "{continuation} = true and {cont_less_6m} = false"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_adherent_maint_dose",
+        "content": "Does the patient meet BOTH of the following: \na. Patient has been adherent to 1 month of treatment,\nb. Patient is currently on a maintenance dose of 5 mg–15 mg once weekly?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_positive_response",
+        "content": "Has the patient had a positive response to treatment or had improvement in symptoms?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "text",
+        "key": "cont_baseline_weight",
+        "content": "What is the patient's baseline weight (including unit)?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "antiobesity_bmi_ge27_comorbid",
+        "content": "Does the patient have a BMI greater than or equal to 27 kg per square meter AND at least one weight-related comorbid condition (e.g., hypertension, type 2 diabetes, dyslipidemia)?"
+      }
+    ]
+  }
+}
+

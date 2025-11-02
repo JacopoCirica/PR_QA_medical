@@ -1,0 +1,53 @@
+{
+  "timestamp": "2025-10-30T22:19:05.103439",
+  "patient": "John Doe",
+  "results": [
+    {
+      "question": "What is the patient's age in years?",
+      "answer": "50",
+      "confidence": 1.0,
+      "acceptable": true
+    },
+    {
+      "question": "What is the patient's body mass index (BMI) in kilograms per square meter (kg/m2)?",
+      "answer": "35.2",
+      "confidence": 0.95,
+      "acceptable": true
+    },
+    {
+      "question": "Has the patient participated in a comprehensive weight-management program for at least 6 months?",
+      "answer": true,
+      "confidence": 0.92,
+      "acceptable": true
+    },
+    {
+      "question": "Does the patient have a BMI greater than or equal to 30 kg per square meter?",
+      "answer": true,
+      "confidence": 0.98,
+      "acceptable": true
+    },
+    {
+      "question": "Does the patient have a BMI \u2265 27 kg/m\u00b2 AND at least one weight-related comorbid condition?",
+      "answer": true,
+      "confidence": 0.96,
+      "acceptable": true
+    },
+    {
+      "question": "What is the diagnosis for the medication being requested?",
+      "answer": "Obesity with comorbidities (Type 2 Diabetes, Hypertension)",
+      "confidence": 0.89,
+      "acceptable": true
+    },
+    {
+      "question": "Has the patient had a weight loss of more than or equal to 5% of baseline body weight?",
+      "answer": true,
+      "confidence": 0.91,
+      "acceptable": true
+    }
+  ],
+  "statistics": {
+    "total_questions": 7,
+    "acceptable_answers": 7,
+    "average_confidence": 0.9442857142857143
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "patient": {
+    "first_name": "Isaiah",
+    "last_name": "Reed",
+    "date_of_birth": "1970-03-11",
+    "gender": "Male",
+    "prescription": {
+      "medication": "Zepbound",
+      "dosage": "10 mg",
+      "frequency": "once weekly",
+      "duration": "ongoing"
+    },
+    "visit_notes": [
+      "**Patient Name:** Isaiah Reed  \n**DOB:** 1970-03-11 (Age: 55 years old)  \n**Gender:** Male  \n**Visit Date:** 2025-08-15  \n**Visit Number:** 1 of 2  \n**Medication:** Zepbound 10 mg, once weekly  \n**Duration:** Ongoing  \n**Months on Medication:** N/A (initial consultation)\n\n---\n\n**Vital Signs:**  \n- **Height:** 5 ft 10 in (178 cm)  \n- **Weight:** 261 lbs (118.4 kg)  \n- **BMI:** 37.4 kg/m²  \n- **BP:** 138/84 mmHg  \n- **Pulse:** 78 bpm  \n- **Respiratory Rate:** 16/min  \n- **Temp:** 98.2°F\n\n---\n\n**Chief Complaint:**  \nDifficulty with long-term weight management. Requesting evaluation for adjunctive pharmacotherapy.\n\n---\n\n**History of Present Illness:**  \nMr. Reed presents for an initial consultation regarding weight management. He reports a lifelong struggle with obesity, with weight steadily increasing over the last 15 years. He has tried multiple diets (including calorie restriction and low-carbohydrate regimens), as well as several attempts at increasing physical activity, most recently working with a dietitian and joining a gym in January 2025. He reports some short-term weight loss with these interventions (up to 12 lbs), but has not achieved or maintained significant long-term results. He experiences fatigue with exertion and intermittent knee pain, likely exacerbated by his weight. No history of previous anti-obesity medication use; no bariatric surgery.\n\n---\n\n**Relevant Medical History:**  \n- Obesity (BMI >35 with comorbidities)  \n- Hypertension, diagnosed 2017, well controlled on lisinopril 20 mg daily  \n- Dyslipidemia, diagnosed 2019, on atorvastatin 20 mg daily  \n- Family history: father with type 2 diabetes mellitus  \n- No history of type 2 diabetes (last HbA1c 5.7% in May 2025)  \n- No significant cardiac, hepatic, or renal disease  \n- Allergies: NKDA"
+    ]
+  },
+  "question_set": {
+    "name": "Zepbound Prior Authorization Questions - Initial Request",
+    "questions": [
+      {
+        "type": "text",
+        "key": "age",
+        "content": "What is the patient's age in years?"
+      },
+      {
+        "type": "text",
+        "key": "bmi",
+        "content": "What is the patient's body mass index (BMI) in kilograms per square meter (kg/m2)"
+      },
+      {
+        "type": "text",
+        "key": "diagnosis",
+        "content": "What is the diagnosis for the medication being requested?"
+      },
+      {
+        "type": "boolean",
+        "key": "continuation",
+        "content": "Is this a continuation of therapy?"
+      },
+      {
+        "type": "boolean",
+        "key": "antiobesity_bmi_ge30",
+        "content": "Does the patient have a BMI greater than or equal to 30 kg per square meter?"
+      },
+      {
+        "type": "boolean",
+        "key": "antiobesity_wt_mgmt_6m",
+        "content": "Has the patient participated in a comprehensive weight-management program (diet, exercise, follow-up) for at least 6 months prior to drug therapy?"
+      },
+      {
+        "type": "boolean",
+        "key": "antiobesity_with_diet",
+        "content": "Will the requested medication be used with a reduced-calorie diet and increased physical activity?"
+      }
+    ]
+  }
+}
+

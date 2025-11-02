@@ -1,0 +1,107 @@
+{
+  "patient": {
+    "first_name": "Madison",
+    "last_name": "Cook",
+    "date_of_birth": "2001-07-11",
+    "gender": "Female",
+    "prescription": {
+      "medication": "Zepbound",
+      "dosage": "2.5 mg",
+      "frequency": "once weekly",
+      "duration": "ongoing"
+    },
+    "visit_notes": [
+      "**Patient Name:** Madison Cook  \n**DOB:** 2001-07-11 (Age: 24 years)  \n**Gender:** Female  \n**Visit Date:** 2025-05-31  \n**Visit Number:** 3 of 3  \n**Medication:** Zepbound 2.5 mg, once weekly, ongoing (Continuation, 11 months on medication)  \n\n---\n\n**Vital Signs:**  \n- Height: 5'6\" (167.6 cm)  \n- Weight: 218 lbs (98.9 kg)  \n- BMI: 35.3 kg/m²  \n- BP: 124/78 mmHg  \n- HR: 76 bpm\n\n---\n\n**Chief Complaint:**  \nFollow-up appointment for obesity management. Patient returns for her third follow-up visit while on Zepbound 2.5 mg, with the goal of continued weight reduction and comorbidity management.\n\n---\n\n**History of Present Illness:**  \nMadison presents today for ongoing management of obesity. She has been on Zepbound 2.5 mg weekly for the past 11 months. She reports ongoing efforts with dietary modification and regular exercise, noting some increased satiety and improved energy levels over the course of treatment. She estimates a total weight loss of 24 lbs since initiation. She denies any new symptoms, adverse effects, or issues with weekly injections. She has remained adherent to her medication schedule.\n\nRelevant past medical history includes elevated blood pressure (well controlled), dyslipidemia, and a family history of type 2 diabetes. Prior to medication initiation, Madison had trialed multiple lifestyle and diet-supported weight loss efforts (including a supervised medical weight loss program), as documented at her initial visit, with only transient success.\n\n---\n\n**Assessment:**  \n24-year-old female with a BMI of 35.3 kg/m² (class I obesity) and associated comorbidities (hypertension, dyslipidemia), presenting for ongoing weight management. Patient meets clinical criteria for anti-obesity pharmacotherapy. She has demonstrated sustained weight loss and improvement in energy and satiety over 11 months on Zepbound. No medication side effects have been reported, and she remains adherent to both pharmacologic and non-pharmacologic interventions (regular aerobic exercise 4-5 times per week, mindful eating, portion control, and reduced simple carbohydrate intake). Blood pressure and labs remain stable and controlled."
+    ]
+  },
+  "question_set": {
+    "name": "Zepbound Prior Authorization Questions - Long-term Continuation",
+    "questions": [
+      {
+        "type": "text",
+        "key": "age",
+        "content": "What is the patient's age in years?"
+      },
+      {
+        "type": "text",
+        "key": "weight",
+        "content": "What is the patient's weight (including unit)?"
+      },
+      {
+        "type": "text",
+        "key": "bmi",
+        "content": "What is the patient's body mass index (BMI) in kilograms per square meter (kg/m2)"
+      },
+      {
+        "type": "boolean",
+        "key": "continuation",
+        "content": "Is this a continuation of therapy?"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_drug_prev_approved",
+        "content": "Has the requested drug been dispensed at a pharmacy and approved for coverage previously by a prior plan?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "text",
+        "key": "cont_duration",
+        "content": "How long has the patient been on the requested medication?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_less_6m",
+        "content": "Has the patient been on Zepbound therapy for less than 6 months?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_maintain_wl",
+        "content": "Has the patient been receiving Zepbound therapy for greater than 6 months and is continuing to experience or maintain weight loss?",
+        "visible_if": "{continuation} = true and {cont_less_6m} = false"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_wl_gt5percent",
+        "content": "Has the patient had a weight loss of more than or equal to 5% of baseline body weight?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_positive_response",
+        "content": "Has the patient had a positive response to treatment or had improvement in symptoms?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "cont_need_assessed",
+        "content": "Has the patient's need for continued therapy been assessed within the previous year?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "text",
+        "key": "cont_baseline_weight",
+        "content": "What is the patient's baseline weight (including unit)?",
+        "visible_if": "{continuation} = true"
+      },
+      {
+        "type": "boolean",
+        "key": "antiobesity_bmi_ge30",
+        "content": "Does the patient have a BMI greater than or equal to 30 kg per square meter?"
+      },
+      {
+        "type": "boolean",
+        "key": "antiobesity_3m_therapy",
+        "content": "Has the patient completed at least 3 months of therapy at a stable maintenance dose?"
+      },
+      {
+        "type": "boolean",
+        "key": "antiobesity_wl_gt5percent",
+        "content": "Has the patient lost at least 5% of baseline body weight or continued to maintain their initial 5% weight loss?",
+        "visible_if": "{antiobesity_3m_therapy} = true"
+      }
+    ]
+  }
+}
+
